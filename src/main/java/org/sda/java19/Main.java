@@ -1,5 +1,19 @@
 package org.sda.java19;
 
+import org.sda.java19.exceptions.WarehouseNotFoundException;
+import org.sda.java19.implementation.ProductServiceImpl;
+import org.sda.java19.implementation.WarehouseServiceImpl;
+import org.sda.java19.models.Product;
+import org.sda.java19.models.ProductCategory;
+import org.sda.java19.models.Warehouse;
+import org.sda.java19.services.ProductService;
+import org.sda.java19.services.WarehouseService;
+import org.sda.java19.util.Data;
+
+import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Exerise-2
  *
@@ -14,13 +28,74 @@ package org.sda.java19;
  * 2. Warehouse - name, list of products, address, isActive
  * 3. Product - name, price, quantity, product category, currency, isAvailable
  * 4. Create Warehouse object - should have prefilled data, Before create
- * list of products and then assign these do warehouse'
+ * list of products and then assign these do warehouse
  * 5. In main matter, switch case: for various operations
  * 6. For each method, call service method and do the operations
  */
 public class Main {
+
     public static void main(String[] args) {
 
 
+
+        //initializing the warehouse
+        WarehouseService warehouseService = new WarehouseServiceImpl();
+        Scanner scanner = new Scanner(System.in);
+
+        //Initializing the warehouse
+        Warehouse warehouse = new Warehouse();
+        warehouse.setName("ABC E-POOD");
+        warehouse.setAddress("Tallinn");
+        warehouse.setActive(true);
+        warehouse.setProducts(Data.getInitialProducts());
+
+        warehouseService.addWarehouse(warehouse); // Adds new warehouse
+
+        productOperations();
+
+
+    private static void productOperations() throws WarehouseNotFoundException {
+        ProductService productService = new ProductServiceImpl();
+
+
+        int option = getOption();
+
+        switch(option) {
+            case 0: //Add a product
+                productService.addProduct(addProduct());
+                break;
+            case 1: //Update a product
+        }
     }
+    private static int getOption() {
+        Scanner scanner = new Scanner(System.in);
+        // User should be able to: add, display all of the details, update, delete an item
+
+        return 0;
+    }
+
+    private static Product addProduct() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the details of the product:");
+        System.out.println("Product name:");
+        String productName = scanner.next();
+        System.out.println("Product price:");
+        float price = scanner.nextFloat();
+        System.out.println("Choose a product category: " + Arrays.toString(ProductCategory.values()));
+        ProductCategory productCategory = ProductCategory.valueOf(scanner.next());
+
+
+        Product product = new Product();
+        product.setName(productName);
+        product.setPrice(BigDecimal.valueOf(price));
+        product.setProductCategory(productCategory);
+
+        return product;
+    }
+
+    private static Product updateProduct() {
+        //Need to display all the products and then ask user to which product to update.
+        return null;
+    }
+}
 }
