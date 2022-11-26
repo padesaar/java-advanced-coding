@@ -20,15 +20,15 @@ public class Data {
         Product product = new Product();
         product.setName("Apple");
         product.setProductCategory(ProductCategory.FOOD);
-        product.setPricePerItem(BigDecimal.ONE);
+        product.setPrice(BigDecimal.ONE);
         product.setQuantity(100);
         product.setAvailable(true);
         product.setCurrency(Currency.EUR);
 
         Product product1 = new Product();
-        product1.setName("Black dotted shirt");
+        product1.setName("Black dotted Shirt");
         product1.setProductCategory(ProductCategory.CLOTHING);
-        product1.setPricePerItem(BigDecimal.valueOf(22.34));
+        product1.setPrice(BigDecimal.valueOf(22.34));
         product1.setQuantity(25);
         product1.setAvailable(true);
         product1.setCurrency(Currency.EUR);

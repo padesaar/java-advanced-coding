@@ -11,12 +11,10 @@ import java.util.List;
 @Data
 @Setter
 @Getter
+
 public class Warehouse {
     private String name;
-    private List<Product> listOfProducts;
     private String address;
+    private List<Product> products;
     private boolean isActive;
-
-
-
 }

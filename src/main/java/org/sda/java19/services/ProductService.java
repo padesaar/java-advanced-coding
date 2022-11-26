@@ -1,5 +1,6 @@
 package org.sda.java19.services;
 
+import org.sda.java19.exceptions.WarehouseNotFoundException;
 import org.sda.java19.models.Product;
 import org.sda.java19.models.ProductCategory;
 
@@ -13,33 +14,41 @@ import java.util.List;
 
 public interface ProductService {
     /**
-     * To add a new peoduct
+     * To add a new product in a warehouse
      * @param product Product
      */
-    void addProduct(Product product);
-    /**
-     * To delete a product from warehouse
-     * @param name Product
-     */
-    void deleteProductByName(String name);
+    void addProduct(Product product) throws WarehouseNotFoundException;
+
     /**
      * To update an existing product in a warehouse
      * @param product Product
+     */
+    void updateProduct(Product product);
+
+    /**
+     * To delete a product in a warehouse by its name
+     * @param name name of the product
+     */
+    void deleteProductByName(String name);
+
+    /**
+     * To get a product by its name from warehouse
+     * @param name name of the product
      * @return Product
      */
-    void updateProduct (Product product);
+    List<Product> getProductByName(String name) throws WarehouseNotFoundException;
+
     /**
-     * To get a list of products from warehouse by a given product category
-     * @param productCategory productCategory
+     * To get a lis tof all products from the warehouse by a given product category
+     * @param productCategory product category
      * @return list of products
      */
-    List<Product> getAllProductsByProductCategory(ProductCategory productCategory);
+    List<Product> getAllProductsByProductCategory(ProductCategory productCategory) throws WarehouseNotFoundException;
+
 
     /**
-     * To get a product by name from warehouse
-     * @param name Product
+     * To get all products from the warehouse
+     * @return list of products
      */
-    Product getProductByName (String name);
-
-    List<Product> getAllProducts();
+    List<Product> getAllProducts() throws WarehouseNotFoundException;
 }
