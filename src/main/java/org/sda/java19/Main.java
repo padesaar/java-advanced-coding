@@ -71,6 +71,7 @@ public class Main {
                 break;
             case 1: //Update a product
                 productService.updateProduct(updateProduct());
+                break;
             case 2: // Display all the products
                 productService.getAllProducts();
                 break;
