@@ -7,7 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -52,7 +51,7 @@ public class Main {
         // Enter the created objects into ArrayList or Map (<line number>: <Person>).
         Scanner scanner = new Scanner(new FileReader("C:\\Users\\37253\\java-advanced-coding\\src\\main\\resources\\data.txt"));
 
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
         int lineNumber = 1;
         while (scanner.hasNextLine()) {
             String[] columns = scanner.nextLine().split(", ");
