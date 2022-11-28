@@ -73,13 +73,14 @@ public class Main {
                 productService.updateProduct(updateProduct());
                 break;
             case 2: // Display all the products
-                productService.getAllProducts();
+                displayAllProducts(productService.getAllProducts());
                 break;
             case 3 : // Delete a product
-                productService.deleteProductByName(" " + getAllProducts());
+                productService.deleteProductByName(deleteProductByName());
                 break;
-            case 4: //Exit
+            case 4: //Display ???
                 break;
+            case 5: //sum of products and prices
             default:
                 System.out.println("Incorrect option, use the correct one!");
                 getOption();
@@ -87,6 +88,8 @@ public class Main {
 
         }
     }
+
+
     private static int getOption() {
         Scanner scanner = new Scanner(System.in);
         // User should be able to: add, display all of the details, update, delete an item
@@ -124,12 +127,9 @@ public class Main {
         return product;
     }
 
-    private static List<Product> getAllProducts() throws WarehouseNotFoundException {
-        Scanner scanner = new Scanner(System.in);
+    private static void displayAllProducts (List<Product> products) throws WarehouseNotFoundException {
         System.out.println("Products in the warehouse:");
-        ProductServiceImpl productService = new ProductServiceImpl();
-
-        return productService.getAllProducts();
+        products.forEach(System.out::println);
     }
     private static Product updateProduct() throws WarehouseNotFoundException {
         //Need to display all the products and then ask user to which product to update.
@@ -149,15 +149,14 @@ public class Main {
         return (Product) List.of(product);
     }
 
-    private static Product deleteProductByName() throws WarehouseNotFoundException {
+    private static String deleteProductByName() throws WarehouseNotFoundException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the product to delete:");
         String productName = scanner.next();
 
-        List<Product> products = getAllProducts();
-        products.remove(productName);
+        // Display all the products and then ask user which product he wants to delete.
+        return null;
 
 
-        return (Product) products;
     }
 }

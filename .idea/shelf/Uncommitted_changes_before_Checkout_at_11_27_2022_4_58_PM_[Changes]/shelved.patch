@@ -1,0 +1,57 @@
+Index: .idea/workspace.xml
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,17 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f4a91625-2c06-48fe-a00e-e78138dfa76b" name="Changes" comment="Person-developer-javadeveloper exercise done">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/exceptions/WarehouseNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/exceptions/WarehouseNotFoundException.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/implementation/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/implementation/ProductServiceImpl.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Product.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Warehouse.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/ProductService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/WarehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/WarehouseService.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/util/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/util/Data.java" afterDir="false" />
+-    </list>
++    <list default="true" id="f4a91625-2c06-48fe-a00e-e78138dfa76b" name="Changes" comment="Warehouse exercise almost finished. Got some errors while running." />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -111,7 +101,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1669055627165</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="Warehouse exercise almost finished. Got some errors while running.">
++      <created>1669560854955</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1669560854955</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Warehouse exercise almost finished. Got some errors while running.">
++      <created>1669560864251</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1669560864251</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -128,6 +132,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Initial commit" />
+     <MESSAGE value="Person-developer-javadeveloper exercise done" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Person-developer-javadeveloper exercise done" />
++    <MESSAGE value="Warehouse exercise almost finished. Got some errors while running." />
++    <option name="LAST_COMMIT_MESSAGE" value="Warehouse exercise almost finished. Got some errors while running." />
+   </component>
+ </project>
+\ No newline at end of file
