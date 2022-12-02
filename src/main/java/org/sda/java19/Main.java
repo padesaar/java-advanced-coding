@@ -34,29 +34,61 @@
 
 package org.sda.java19;
 
-import org.sda.java19.models.Group;
-import org.sda.java19.models.Student;
-import org.sda.java19.models.Trainer;
+import org.sda.java19.models.*;
 import org.sda.util.Data;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class Main {
-    public static void main(String[] args) {
+import static org.sda.util.Data.getStudents;
 
-        List<Student> studentList = Data.getStudents();
+public class Main {
+    public static void main(String[] args) throws MaximumNumberOfStudentsReachedException {
+
+        List<Student> studentList = getStudents();
         List<Trainer> trainerList = Data.getTrainer();
         List<Group> groupList = Data.getGroup();
 
         assignStudentsToGroup(groupList);
+        System.out.println(groupList);
+
+        Group group1 = new Group();
+        group1.setStudents(assignStudentsToGroup(groupList));
+        group1.getName();
+        group1.getTrainer();
+        System.out.println(group1);
 
 
 
 
     }
-    private static void assignStudentsToGroup(List<Group> groupList) {
+    private static List<Student> assignStudentsToGroup(List<Group> groupList) throws MaximumNumberOfStudentsReachedException{
+        //assign 2-3 student to each group
+        //Ensure the fact that a group will only have distinct students (How would you do that?)
 
+        List<Student> studentList = getStudents();
+        List<Trainer> trainerList = Data.getTrainer();
+        List<Student> studentsInGroup = Data.getStudents();
+
+
+        //Collections.shuffle(studentList);
+        try {
+            studentsInGroup.stream()
+                    .collect(Collectors.groupingBy(Person::getDateOfBirth))
+                    .values()
+                    .stream()
+                    .map(x -> x.stream().map(Objects::toString)).collect(Collectors.toList())
+                    .forEach(System.out::println);
+
+            if(studentsInGroup.size() <= 5) {
+                assignStudentsToGroup(groupList);
+
+            }
+        } catch (MaximumNumberOfStudentsReachedException maximumNumberOfStudentsReachedException) {
+            System.out.println(maximumNumberOfStudentsReachedException.getLocalizedMessage());
+        }
+        return studentList;
     }
 
 }

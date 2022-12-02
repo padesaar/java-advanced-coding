@@ -9,4 +9,8 @@ import lombok.Data;
 @Data
 public class Student extends Person {
     private boolean hasPreviousJavaKnowledge;
+
+    public boolean isHasPreviousJavaKnowledge() {
+        return hasPreviousJavaKnowledge;
+    }
 }
