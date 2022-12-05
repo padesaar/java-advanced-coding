@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4a91625-2c06-48fe-a00e-e78138dfa76b" name="Changes" comment="Person-developer-javadeveloper exercise done">
+    <list default="true" id="f4a91625-2c06-48fe-a00e-e78138dfa76b" name="Changes" comment="Person-trainer exercise in progress">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_26_2022_8_58_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_26_2022_8_58_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_27_2022_4_58_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_27_2022_4_58_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/exceptions/WarehouseNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/exceptions/WarehouseNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/implementation/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/implementation/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/models/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/WarehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/services/WarehouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/sda/java19/util/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sda/java19/util/Data.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +81,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

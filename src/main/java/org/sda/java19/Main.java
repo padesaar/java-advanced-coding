@@ -59,7 +59,7 @@ public class Main {
         productOperations();
     }
 
-    private static void productOperations() throws WarehouseNotFoundException {
+    private static Product productOperations() throws WarehouseNotFoundException {
         ProductService productService = new ProductServiceImpl();
 
 
@@ -87,6 +87,7 @@ public class Main {
 
 
         }
+        return null;
     }
 
 
@@ -108,7 +109,7 @@ public class Main {
 
     }
 
-    private static Product addProduct() {
+    private static Product addProduct() throws WarehouseNotFoundException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the details of the product:");
         System.out.println("Product name:");
@@ -124,7 +125,7 @@ public class Main {
         product.setPrice(BigDecimal.valueOf(price));
         product.setProductCategory(productCategory);
 
-        return product;
+        return productOperations();
     }
 
     private static void displayAllProducts (List<Product> products) throws WarehouseNotFoundException {

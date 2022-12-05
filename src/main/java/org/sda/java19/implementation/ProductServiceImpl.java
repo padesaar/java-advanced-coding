@@ -9,10 +9,7 @@ import org.sda.java19.services.ProductService;
 import org.sda.java19.services.WarehouseService;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ProductServiceImpl implements ProductService {
@@ -22,7 +19,7 @@ public class ProductServiceImpl implements ProductService {
     public void addProduct(Product product) {
         try {
             Warehouse warehouse = warehouseService.getWarehouse();
-            List<Product> products = warehouse.getProducts();
+            List<Product> products = new ArrayList<>(Arrays.asList(warehouse.getProducts().toArray(new Product[0])));
             products.add(product);
             warehouse.setProducts(products);
             warehouseService.updateWarehouse(warehouse);
