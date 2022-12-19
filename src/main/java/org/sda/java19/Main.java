@@ -37,58 +37,68 @@ package org.sda.java19;
 import org.sda.java19.models.*;
 import org.sda.util.Data;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.sda.util.Data.getStudents;
 
 public class Main {
+    private static final int MAXIMUM_ALLOWED_STUDENTS = 5;
     public static void main(String[] args) throws MaximumNumberOfStudentsReachedException {
 
-        List<Student> studentList = getStudents();
+        List<Student> studentList = Data.getStudents();
         List<Trainer> trainerList = Data.getTrainer();
         List<Group> groupList = Data.getGroup();
 
-        assignStudentsToGroup(groupList);
-        System.out.println(groupList);
+       assignStudentsToGroup(groupList, studentList);
+        assignTrainerToGroup(groupList, trainerList);
 
-        Group group1 = new Group();
-        group1.setStudents(assignStudentsToGroup(groupList));
-        group1.getName();
-        group1.getTrainer();
-        System.out.println(group1);
-
-
-
-
-    }
-    private static List<Student> assignStudentsToGroup(List<Group> groupList) throws MaximumNumberOfStudentsReachedException{
-        //assign 2-3 student to each group
-        //Ensure the fact that a group will only have distinct students (How would you do that?)
-
-        List<Student> studentList = getStudents();
-        List<Trainer> trainerList = Data.getTrainer();
-        List<Student> studentsInGroup = Data.getStudents();
-
-
-        //Collections.shuffle(studentList);
-        try {
-            studentsInGroup.stream()
-                    .collect(Collectors.groupingBy(Person::getDateOfBirth))
-                    .values()
-                    .stream()
-                    .map(x -> x.stream().map(Objects::toString)).collect(Collectors.toList())
-                    .forEach(System.out::println);
-
-            if(studentsInGroup.size() <= 5) {
-                assignStudentsToGroup(groupList);
-
-            }
-        } catch (MaximumNumberOfStudentsReachedException maximumNumberOfStudentsReachedException) {
-            System.out.println(maximumNumberOfStudentsReachedException.getLocalizedMessage());
+        //Display all students in a group sorted alphabetically by lastname
+        for(Group group : groupList) {
+            group.setStudents(group.getStudents().stream()
+                    .sorted(Comparator.comparing(Person:: getLastName))
+                            .collect(Collectors.toList()));
         }
-        return studentList;
+
+        //Display the group with number of students
+       groupList.stream()
+               .sorted(Comparator.comparingInt(List::size)).reversed()
+
     }
 
+    private static void assignStudentsToGroup(List<Group> groupList, List<Student> studentList) throws MaximumNumberOfStudentsReachedException{
+        //assign 2-3 student to each group
+        //Ensure the fact that a group will only have distinct students (How would you do that?) (not any duplicates)
+        LinkedList<Student> studentLinkedList = new LinkedList<>(studentList); //arrayList to linkedLIst
+
+
+        for(Group group: groupList) {
+            List<Student> students = new ArrayList<>();
+            for(int i = 0; i <= 4; i++) {
+                if(students.size() >= MAXIMUM_ALLOWED_STUDENTS) {
+                throw new MaximumNumberOfStudentsReachedException(group.getName());
+            }
+                Random random = new Random();
+                int nextStudentIndex = random.nextInt(studentList.size()); //get the random index
+                students.add(studentLinkedList.get(nextStudentIndex));
+                studentLinkedList.remove(nextStudentIndex); //so that we don't have any duplicates
+        }
+
+        group.setStudents(students);
 }
+}
+    private static void assignTrainerToGroup(List<Group> groupList, List<Trainer> trainerList){
+
+        List<Trainer> trainers = new ArrayList<>();
+
+        for(Group group: groupList) {
+
+                Random random = new Random();
+                int nextTrainerIndex = random.nextInt(trainerList.size()); //get the random index
+                group.setTrainer(trainerList.get(nextTrainerIndex));
+        }
+
+
+        }
+    }
+

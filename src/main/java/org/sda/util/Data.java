@@ -133,23 +133,18 @@ public class Data {
 
         Group group1 = new Group();
         group1.setName("Javaremote19");
-        group1.setTrainer(getTrainer().get(0));
-       // group1.setStudents(getStudents().subList(0,2));
+
 
         Group group2 = new Group();
         group2.setName("Javaremote20");
-        group2.setTrainer(getTrainer().get(1));
-       // group2.setStudents(getStudents().subList(3,5));
+
 
         Group group3 = new Group();
         group3.setName("Javaremote21");
-        group3.setTrainer(getTrainer().get(2));
-        //group3.setStudents(getStudents().subList(6,8));
 
         Group group4 = new Group();
         group4.setName("Javaremote22");
-        group4.setTrainer(getTrainer().get(2));
-        //group4.setStudents(getStudents().subList(9,11));
+
 
         return List.of(group1, group2, group3, group4);
     }
